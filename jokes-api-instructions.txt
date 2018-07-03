@@ -1,0 +1,8 @@
+- Create DynamoDB "jokes-api-makerlab"
+    - jokes_id as string
+- Create Lambda Function to upll a jokes
+    - "retrieve-insert-joke-function" is the name of function
+    - User Nodejs 8.10
+    - Create new role from template
+    - Create new role associated with function
+        - joke-api-lambda-role
