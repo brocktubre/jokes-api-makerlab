@@ -2,9 +2,11 @@
     - jokes_id as string
 - Create Lambda Function to upll a jokes
     - "retrieve-insert-joke-function" is the name of function
-    - User Nodejs 8.10
+    - Use Nodejs 8.10
     - Create new role from template
     - Create new role associated with function
         - joke-api-lambda-role
             - Give it DynamoDBFullAccess
             - Give AWSLambdaBasicExecutionRole (Must attach to give ability to write to CloudWatch)
+    - Copy and paste code provided in Makerlab
+    - Ensure that students set envriornment varible for table name
