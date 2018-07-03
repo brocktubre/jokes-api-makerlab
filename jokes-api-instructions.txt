@@ -6,3 +6,5 @@
     - Create new role from template
     - Create new role associated with function
         - joke-api-lambda-role
+            - Give it DynamoDBFullAccess
+            - Give AWSLambdaBasicExecutionRole (Must attach to give ability to write to CloudWatch)
