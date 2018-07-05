@@ -37,9 +37,15 @@
 - Create a Lambda function to get a random joke
     - Create a new lambda function named "get-random-joke-function"
 
-- Create a resource (GET) to get a radom joke
-- Create a resource (PUT) to trigger insert lambda function
+- Create a method (GET) to get a radom joke
+    - Setup a Body Mapping Templates
+    - { "joke_id" : "$input.params('joke_id')" }
+    - 
+
+- Create a method (PUT) to trigger insert lambda function
     - Use build in API Gateway Testing functionilty
-- Create a resource (GET) to get a joke by its jokes_id 
+
+- Create a resource {joke_id} 
+    - Create a resource (GET) to get a joke by its jokes_id
 
 

@@ -7,17 +7,17 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 const TABLE_NAME = process.env.table_name;
 
 exports.handler = async (event, context, callback) => {
+    const joke_id = event.joke_id;
     
-    
-    if(event.joke_id){
+    if(joke_id) {
         var params = {
             TableName:TABLE_NAME,
             ExpressionAttributeValues: {
-            ':id': event.joke_id
-           },
-           FilterExpression: 'joke_id IN (:id)',
+                ':i': joke_id
+            },
+            FilterExpression: 'joke_id IN (:i)',
         };
-                    
+                        
         const listJokes = dynamodb.scan(params).promise();
         
         return listJokes.then((data, err) => {
@@ -38,5 +38,4 @@ exports.handler = async (event, context, callback) => {
             return data.Items[randomJoke];
         });
     }
-    
 };
