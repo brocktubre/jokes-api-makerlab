@@ -1,6 +1,7 @@
 
 https://aws.amazon.com/
 
+dynamo-cloudwatch-access-iam-policy.json
 insert-joke-function.js
 list-jokes-function.js
 get-random-joke.js
