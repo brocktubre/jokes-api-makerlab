@@ -1,5 +1,5 @@
-- Create DynamoDB "jokes-api-makerlab"
-    - jokes_id as string
+- Create DynamoDB "jokes-api-table"
+    - joke_id as string
 
 - Create Lambda Function to pull and insert a joke
     - "retrieve-insert-joke-function" is the name of function
@@ -7,28 +7,30 @@
     - Create new role from template
     - Create new role associated with function
         - joke-api-lambda-role
-            - Give it DynamoDBFullAccess (note that poilcy for fine grain access is attached)
+            - Give it DynamoDBFullAccess (note that policy for fine grain access is attached)
             - Give AWSLambdaBasicExecutionRole (Must attach to give ability to write to CloudWatch)
     - Copy and paste code provided in Makerlab
-    - Ensure that students set envriornment varible for table name.
+    - Ensure that students set environment variable for table name.
     - Show them how to configure a test in Lambda
 
 - Create a Lambda function to list all of the jokes.
     - Create new lambda function named "list-jokes-makerlab-function".
 
-- Create a CloudWatch rule to trigger every 5 mins.
+- Create a CloudWatch rule to trigger every 5 min. 
+- 0/5 * * * ? *
+- PopulateJokeTableRule
 
 - Create API Gateway
     - New API
     - Type in Name and Description
-    - Create a resource that can be called by it's sperate URL path, API Gateway can have man URL resources.
+    - Create a resource that can be called by it's separate URL path, API Gateway can have man URL resources.
     - Resource will be called jokes
     - Create an access method under our resource
     - Lets create a GET method that list all of the Jokes in the DynamoDB table
     - Allow access to call Lambda function
     - Must deploy API before using
     - When trying to access API we will get an Missing Authentication Token
-        - This is becuase we did not specficy any access method for the root URL
+        - This is because we did not specific any access method for the root URL
     - Must access url/<StageName>/jokes
 
 - Create a Lambda function to list all of the jokes
@@ -37,13 +39,13 @@
 - Create a Lambda function to get a random joke
     - Create a new lambda function named "get-random-joke-function"
 
-- Create a method (GET) to get a radom joke
+- Create a method (GET) to get a random joke
     - Setup a Body Mapping Templates
     - { "joke_id" : "$input.params('joke_id')" }
     - 
 
 - Create a method (PUT) to trigger insert lambda function
-    - Use build in API Gateway Testing functionilty
+    - Use build in API Gateway Testing functionality
 
 - Create a resource {joke_id} 
     - Create a resource (GET) to get a joke by its jokes_id

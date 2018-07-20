@@ -1,0 +1,10 @@
+
+https://aws.amazon.com/
+
+insert-joke-function.js
+list-jokes-function.js
+get-random-joke.js
+get-a-joke.js
+input-template.json
+
+

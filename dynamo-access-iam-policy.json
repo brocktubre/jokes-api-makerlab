@@ -12,7 +12,33 @@
                 "dynamodb:UpdateItem",
                 "dynamodb:GetRecords"
             ],
-            "Resource": "arn:aws:dynamodb:us-east-1:880898370811:table/jokes-api-makerlab"
+            "Resource": [
+                "arn:aws:dynamodb:<REGION>:<AWS_ACCOUNT_ID>:table/jokes-api-table",
+                "arn:aws:dynamodb:<REGION>:<AWS_ACCOUNT_ID>:table/jokes-api-table/stream/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:UpdateItem",
+                "dynamodb:GetRecords"
+            ],
+            "Resource": "arn:aws:dynamodb:<REGION>:<AWS_ACCOUNT_ID>:table/jokes-api-table"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
         }
     ]
 }
